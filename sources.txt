@@ -1,0 +1,2 @@
+Policy: https://stackoverflow.com/questions/61356867/azure-policy-check-for-an-empty-value
+

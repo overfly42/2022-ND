@@ -1,0 +1,1 @@
+az policy definition create --name tagging-policy --display-name "Deny untagged resource creation" --description "This rule shall deny creation of a untagged resource" --rules tagged_only_policy.json --mode All
