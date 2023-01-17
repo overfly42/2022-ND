@@ -14,7 +14,7 @@
     "os_type": "Linux",
     "image_publisher": "Canonical",
     "image_offer": "UbuntuServer",
-    "image_sku": "18.04-LTS",
+    "image_sku": "18_04-lts-gen2",
  
     "managed_image_resource_group_name": "udacity-demo-rg",
     "managed_image_name": "httpDemo",
