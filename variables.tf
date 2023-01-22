@@ -10,3 +10,7 @@ variable "vmcount" {
   description = "The amount of virtual maschines created behind the load balancer."
   default = 2
 }
+variable "tags" {
+    description = "Tags for the resources"
+    default = {"udacity":"test"}
+}

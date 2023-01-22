@@ -1,5 +1,15 @@
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "=3.40.0"
+    }
+  }
+}
+
 provider "azurerm" {
-  features {}
+    features  {}
+
 }
 
 resource "azurerm_resource_group" "main" {
@@ -26,27 +36,34 @@ resource "azurerm_network_security_group" "webserver" {
   name                = "tls_webserver"
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
-  security_rule [{
+}
+resource "azurerm_network_security_rule" "allow_all_intern" {
     access                     = "Allow"
     direction                  = "Inbound"
     name                       = "allow_intern"
-    priority                   = 100
+    priority                   = 110
     protocol                   = "*"
     source_port_range          = "*"
-    source_address_prefix      = azurerm_subnet.internal.address_prefix
+    source_address_prefix      = "azurerm_subnet.internal.address_prefixes"
     destination_port_range     = "*"
-    destination_address_prefix = azurerm_subnet.internal.address_prefix
-  },{
-    access                     = "Deny"
-    direction                  = "Inbound"
-    name                       = "deny_from_outside"
-    priority                   = 90
-    protocol                   = "*"
-    source_port_range          = "*"
-    source_address_prefix      = "Internet"
-    destination_port_range     = "*"
-    destination_address_prefix = azurerm_subnet.internal.address_prefix
-  }]
+    destination_address_prefix = "azurerm_subnet.internal.address_prefixes"
+    resource_group_name         = azurerm_resource_group.main.name
+    network_security_group_name = azurerm_network_security_group.webserver.name
+
+}
+
+resource "azurerm_network_security_rule" "Deny_all_extern" {
+    access                      = "Deny"
+    direction                   = "Inbound"
+    name                        = "deny_from_outside"
+    priority                    = 100
+    protocol                    = "*"
+    source_port_range           = "*"
+    source_address_prefix       = "Internet"
+    destination_port_range      = "*"
+    destination_address_prefix  = "azurerm_subnet.internal.address_prefixes"
+    resource_group_name         = azurerm_resource_group.main.name
+    network_security_group_name = azurerm_network_security_group.webserver.name
 }
 
 resource "azurerm_network_interface" "main" {
@@ -80,7 +97,6 @@ resource "azurerm_lb" "loadbalancer" {
   }
 }
 resource "azurerm_lb_backend_address_pool" "loadbalancer" {
-  resource_group_name = azurerm_resource_group.main.name
   loadbalancer_id     = azurerm_lb.loadbalancer.id
   name                = "BackEndAddressPool"
 }
@@ -127,7 +143,7 @@ resource "azurerm_linux_virtual_machine" "main" {
   #  sku       = "16.04-LTS"
   #  version   = "latest"
   #}
-  source_image_id="httpDemo"
+  source_image_id="/subscriptions/a7f4943c-0527-4918-98af-14af18d4cebf/resourceGroups/UDACITY-DEMO-RG/providers/Microsoft.Compute/images/httpDemo"
 
   os_disk {
     storage_account_type = "Standard_LRS"
@@ -136,14 +152,14 @@ resource "azurerm_linux_virtual_machine" "main" {
 }
 
 resource "azurerm_managed_disk" "managed_disk" {
-  count                = length(var.vmcount)
+  count                = var.vmcount
   name                 = "DISK_${count.index}"
   location             = azurerm_resource_group.main.location
   resource_group_name  = azurerm_resource_group.main.name
   storage_account_type = "Standard_LRS"
   create_option        = "Empty"
   disk_size_gb         = 10
-  tags                 = var.tags
+  tags                 = "${var.tags}"
 }
 
 resource "azurerm_virtual_machine_data_disk_attachment" "managed_disk_attach" {
