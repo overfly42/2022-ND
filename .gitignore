@@ -2,3 +2,4 @@ activate_policy_with_subscription.sh
 *.xcf
 set_credentials.sh
 .terraform*
+provider.tf
