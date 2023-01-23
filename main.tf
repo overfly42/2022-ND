@@ -7,10 +7,11 @@ terraform {
   }
 }
 
+data azurerm_subscription "current" { }
 
 
 resource "azurerm_resource_group" "main" {
-  name     = "${var.prefix}-rg"
+  name     = "${var.prefix}-resgrp"
   location = var.location
 }
 
@@ -41,9 +42,9 @@ resource "azurerm_network_security_rule" "allow_all_intern" {
     priority                   = 110
     protocol                   = "*"
     source_port_range          = "*"
-    source_address_prefix      = "azurerm_subnet.internal.address_prefixes"
+    source_address_prefix      = "VirtualNetwork"
     destination_port_range     = "*"
-    destination_address_prefix = "azurerm_subnet.internal.address_prefixes"
+    destination_address_prefix = "VirtualNetwork"
     resource_group_name         = azurerm_resource_group.main.name
     network_security_group_name = azurerm_network_security_group.webserver.name
 
@@ -58,7 +59,7 @@ resource "azurerm_network_security_rule" "Deny_all_extern" {
     source_port_range           = "*"
     source_address_prefix       = "Internet"
     destination_port_range      = "*"
-    destination_address_prefix  = "azurerm_subnet.internal.address_prefixes"
+    destination_address_prefix  = "VirtualNetwork"
     resource_group_name         = azurerm_resource_group.main.name
     network_security_group_name = azurerm_network_security_group.webserver.name
 }
@@ -140,7 +141,7 @@ resource "azurerm_linux_virtual_machine" "main" {
   #  sku       = "16.04-LTS"
   #  version   = "latest"
   #}
-  source_image_id="/subscriptions/a7f4943c-0527-4918-98af-14af18d4cebf/resourceGroups/UDACITY-DEMO-RG/providers/Microsoft.Compute/images/httpDemo"
+  source_image_id="${data.azurerm_subscription.current.id}/resourceGroups/UDACITY-DEMO-RG/providers/Microsoft.Compute/images/httpDemo"
 
   os_disk {
     storage_account_type = "Standard_LRS"
