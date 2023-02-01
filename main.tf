@@ -35,14 +35,43 @@ resource "azurerm_network_security_group" "webserver" {
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
 }
-resource "azurerm_network_security_rule" "allow_all_intern" {
+resource "azurerm_network_security_rule" "allow_all_intern_in" {
     access                     = "Allow"
     direction                  = "Inbound"
-    name                       = "allow_intern"
+    name                       = "allow_intern_in"
     priority                   = 110
     protocol                   = "*"
     source_port_range          = "*"
     source_address_prefix      = "VirtualNetwork"
+    destination_port_range     = "*"
+    destination_address_prefix = "VirtualNetwork"
+    resource_group_name         = azurerm_resource_group.main.name
+    network_security_group_name = azurerm_network_security_group.webserver.name
+
+}
+resource "azurerm_network_security_rule" "allow_all_intern_out" {
+    access                     = "Allow"
+    direction                  = "Outbound"
+    name                       = "allow_intern_out"
+    priority                   = 120
+    protocol                   = "*"
+    source_port_range          = "*"
+    source_address_prefix      = "VirtualNetwork"
+    destination_port_range     = "*"
+    destination_address_prefix = "VirtualNetwork"
+    resource_group_name         = azurerm_resource_group.main.name
+    network_security_group_name = azurerm_network_security_group.webserver.name
+
+}
+
+resource "azurerm_network_security_rule" "allow_lb" {
+    access                     = "Allow"
+    direction                  = "Inbound"
+    name                       = "allow_intern_lb"
+    priority                   = 120
+    protocol                   = "*"
+    source_port_range          = "*"
+    source_address_prefix      = "AzureLoadBalancer"
     destination_port_range     = "*"
     destination_address_prefix = "VirtualNetwork"
     resource_group_name         = azurerm_resource_group.main.name
@@ -94,6 +123,8 @@ resource "azurerm_lb" "loadbalancer" {
     public_ip_address_id = azurerm_public_ip.pip.id
   }
 }
+
+
 resource "azurerm_lb_backend_address_pool" "loadbalancer" {
   loadbalancer_id     = azurerm_lb.loadbalancer.id
   name                = "BackEndAddressPool"
@@ -131,7 +162,8 @@ resource "azurerm_linux_virtual_machine" "main" {
   admin_password                  = "P@ssw0rd1234!"
   availability_set_id             = azurerm_availability_set.avset.id
   disable_password_authentication = false
-  network_interface_ids = [
+  tags                            = "${var.tags}"
+  network_interface_ids           = [
     azurerm_network_interface.main[count.index].id,
   ]
 
