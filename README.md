@@ -22,24 +22,34 @@ The Scripts located in this reposiory assume packer and terraform in the parent 
 ALTERNATIVLY: Adjust create_image.sh and do_all.sh to adjust the path to terraform and packer
 
 ### Instructions
+The followings describes the singel steps of deploying the provided soulution to your azure acount
+
+#### Step 1 Collect data from Azure
 For deploying an infrastructure with the given scripts you will need to prepare some Data from DevOps:
 - submission_id
 - client_secret
 - client_id
 - tenant_id
-OPTIONAL:
-- Adjust the prefix to fit your naming conventions
-- Adjust vmcount to set the number of parralel VMs behind the load balancer
 
+#### Step 2 Provide data to scripts
 These values have to be placed in:
 - set_creds.sh
 - provider_template.tf
+The parameter within the scripts are named accordingly to STEP 1
 
+#### Step 3 (OPTIONAL) Adjust configuration
+- Adjust the prefix to fit your naming conventions, the prefix is set before the newly created resource group and it's content
+- Adjust vmcount to set the number of parralel VMs behind the load balancer. Default is 2 for 2 virtual maschines
+- Adjust location, if this is different from "West Europe"
+- Adjust the tags that shall be added to VMs and Storages
+
+#### Step 4 Make scripts runnable
 Ensure the following scripts are marked as executable
 - do_all.sh
 - set_creds.sh
 - create_image.sh
 
+#### Step 5 Deployment
 After finishing previous instructions execute
 - do_all.sh
 
