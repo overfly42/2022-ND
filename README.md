@@ -33,9 +33,8 @@ For deploying an infrastructure with the given scripts you will need to prepare 
 
 #### Step 2 Provide data to scripts
 These values have to be placed in:
-- set_creds.sh
-- provider_template.tf
-The parameter within the scripts are named accordingly to STEP 1
+- do_all.sh
+The parameter within the script are named accordingly to STEP 1
 
 #### Step 3 (OPTIONAL) Adjust configuration
 - Adjust the prefix to fit your naming conventions, the prefix is set before the newly created resource group and it's content

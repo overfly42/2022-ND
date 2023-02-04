@@ -3,3 +3,4 @@ activate_policy_with_subscription.sh
 set_credentials.sh
 .terraform*
 provider.tf
+*_backup
