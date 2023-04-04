@@ -13,6 +13,9 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: 3.10.10
+    - name: Change working directory
+      run: |
+        cd project2
     - name: Install dependencies
       run: |
         make install
