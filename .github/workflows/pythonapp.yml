@@ -15,7 +15,8 @@ jobs:
         python-version: 3.10.10
     - name: Change working directory
       run: |
-        cd project2
+        ls &\
+          cd project2
     - name: Install dependencies
       run: |
         make install
