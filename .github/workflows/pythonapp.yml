@@ -16,7 +16,7 @@ jobs:
     - name: Change working directory
       run: |
         ls &\
-          cd project2
+          cd Project2
     - name: Install dependencies
       run: |
         make install
