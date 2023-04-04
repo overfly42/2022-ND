@@ -13,16 +13,19 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: 3.10.10
-    - name: Change working directory
+    - name: Show content of working dir
       run: |
-        ls &\
-          cd Project2
+        ls
+      working-directory: Project2
     - name: Install dependencies
       run: |
         make install
+      working-directory: Project2
     - name: Lint with pylint
       run: |
         make lint
+      working-directory: Project2
     - name: Test with pytest
       run: |
         make test
+      working-directory: Project2
