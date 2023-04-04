@@ -9,16 +9,23 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.5
+    - name: Set up Python 3.10.10
       uses: actions/setup-python@v1
       with:
-        python-version: 3.5
+        python-version: 3.10.10
+    - name: Show content of working dir
+      run: |
+        ls
+      working-directory: Project2
     - name: Install dependencies
       run: |
         make install
+      working-directory: Project2
     - name: Lint with pylint
       run: |
         make lint
+      working-directory: Project2
     - name: Test with pytest
       run: |
         make test
+      working-directory: Project2
