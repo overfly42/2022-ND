@@ -37,8 +37,9 @@ jobs:
         with:
           name: python-app
           path: |
-            ./project2 
+            .
             !venv/
+        working-directory: Project2        
   deploy:
     runs-on: ubuntu-latest
     needs: build
