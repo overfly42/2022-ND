@@ -32,7 +32,7 @@ jobs:
         working-directory: Project2        
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       - name: run command sh
-        run: ls
+        run: ls && chmod +x commands.sh && ./commands.sh
         working-directory: Project2        
           
       - name: Upload artifact for deployment jobs
