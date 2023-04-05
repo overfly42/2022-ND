@@ -44,5 +44,10 @@ def predict():
     prediction = list(clf.predict(scaled_payload))
     return jsonify({'prediction': prediction})
 
+@app.route("/test", methods=['GET'])
+def show_test_page():
+	html = '<h3>Test Page</h3>'
+	return html
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
