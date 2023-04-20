@@ -17,8 +17,23 @@ Within this project a simple web service is deployed as AZURE Web Service. It'll
 
 <TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
 
-* Project running on Azure App Service
+### Run in Dev Environment
+To run the application in DEV environment it is advisable to create a virtual environment using:
+````
+python -m venv /path/to/new/virtual/environment
+source /path/to/new/virtual/environment/bin/activate
+````
+After cloning the repostiory the application could be prepared and started with the folowing commands in the Project2 folder
+````
+make all
+python flask-sklearn/app.py
+````
+With this the server application is started locally. To run an example query start the make_prediction.sh
+### Run in Production Environment
 
+* Project running on Azure App Service
+The following screenshot shows a deployed web service in Azure App Service: 
+![Image of Azure App Service](https://github.com/overfly42/2022-ND/blob/1545af9a4dcf5f93ba9a420883ba8d83b5541ea4/Project2/Screenshot_appservice.png)
 * Project cloned into Azure Cloud Shell
 
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
