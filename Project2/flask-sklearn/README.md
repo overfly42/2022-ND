@@ -1,12 +1,14 @@
 # Overview
 
 <TODO: complete this with an overview of your project>
+Within this project a simple web service is deployed as AZURE Web Service. It'll demonstrate a continous integration using
+- git hub
+- azure
 
 ## Project Plan
-<TODO: Project Plan
 
-* A link to a Trello board for the project
-* A link to a spreadsheet that includes the original and final project plan>
+* A link to a Trello board for the project: https://trello.com/b/R6aZ3kbq/udacity2022devopsprj2
+* A link to a spreadsheet that includes the original and final project plan: https://github.com/overfly42/2022-ND/blob/f9fce46ae20fa0952a337593ecea2b77eb0784fb/Project2/MGMT-Overview.xlsx
 
 ## Instructions
 
