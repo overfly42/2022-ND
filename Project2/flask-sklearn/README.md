@@ -35,6 +35,8 @@ With this the server application is started locally. To run an example query sta
 The following screenshot shows a deployed web service in Azure App Service: 
 ![Image of Azure App Service](https://github.com/overfly42/2022-ND/blob/1545af9a4dcf5f93ba9a420883ba8d83b5541ea4/Project2/Screenshot_appservice.png)
 * Project cloned into Azure Cloud Shell
+The Cloud Shell could be accessed via the Azure Portal and could be used like a common bash shell: for example see the following screenshot with cloned repo:
+![Image of cloned repo](https://github.com/overfly42/2022-ND/blob/85f0af425d6e4105dd910ab569168c9e118f3956/Project2/Screenshot_project_cloned_into_cloud.png)
 
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
 
