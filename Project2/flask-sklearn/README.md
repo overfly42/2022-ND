@@ -63,16 +63,21 @@ udacity@Azure:~$ ./make_predict_azure_app.sh
 Port: 443
 {"prediction":[20.35373177134412]}
 ```
-![Image of prediction]()
+![Image of prediction](https://github.com/overfly42/2022-ND/blob/dd846eeeec575af701ce690173be61bfa9d708b6/Project2/Screenshot_sucessful_prediction.png)
 
 * Output of streamed log files from deployed application
 
-> 
+To view the logs the followning file could be used, followed by a screenshot:
+````
+az webapp log tail --name cs-udacity2022
+````
+![Image of log files](https://github.com/overfly42/2022-ND/blob/dd846eeeec575af701ce690173be61bfa9d708b6/Project2/Screenshot_webapp_log.png)
 
 ## Enhancements
-
-<TODO: A short description of how to improve the project in the future>
-
+There a several posibilies to enahnce this project:
+- Website with UI
+- Enahnce the model accuracy
+- Increase possible input parameter
 ## Demo 
 
 <TODO: Add link Screencast on YouTube>
