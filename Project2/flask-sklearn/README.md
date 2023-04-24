@@ -40,10 +40,19 @@ The Cloud Shell could be accessed via the Azure Portal and could be used like a 
 
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
 
+During execution of "make all" th test target is executed. The example result is visible in this screenshot:
+![Image of executed tests]()
+
 * Output of a test run
 
 * Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
 
+To deploy the system run 
+````
+cd Project2/flask-sklearn
+../commands.sh
+````
+This will request a login to Azure and populates the app. To change the name added the last parameter "cs-udacity2022" to what ever you like and is available.
 * Running Azure App Service from Azure Pipelines automatic deployment
 
 * Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
@@ -54,6 +63,7 @@ udacity@Azure:~$ ./make_predict_azure_app.sh
 Port: 443
 {"prediction":[20.35373177134412]}
 ```
+![Image of prediction]()
 
 * Output of streamed log files from deployed application
 
