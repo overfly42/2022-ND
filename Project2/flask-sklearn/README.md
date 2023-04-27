@@ -2,8 +2,9 @@
 
 <TODO: complete this with an overview of your project>
 Within this project a simple web service is deployed as AZURE Web Service. It'll demonstrate a continous integration using
-- git hub
-- azure
+- git hub for repository
+- azure as CI/CD Pipeline
+- Local Build Agent 
 
 ## Project Plan
 
