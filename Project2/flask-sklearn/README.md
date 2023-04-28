@@ -42,7 +42,7 @@ The Cloud Shell could be accessed via the Azure Portal and could be used like a 
 * Passing tests that are displayed after running the `make all` command from the `Makefile`
 
 During execution of "make all" th test target is executed. The example result is visible in this screenshot:
-![Image of executed tests]()
+![Image of executed tests](https://github.com/overfly42/2022-ND/blob/c1ec5a5b00a6a3099ad7671aa7294a966ee378ba/Project2/Screenshot_first_python_test.png)
 
 * Output of a test run
 
