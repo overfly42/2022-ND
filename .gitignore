@@ -12,3 +12,5 @@ __pycache__
 .ipynb_checkpoints
 .azure
 Project2/devOps_pat.txt
+Project1/solution.plan
+Project3/automatedtesting/jmeter/fakerestapi/*
