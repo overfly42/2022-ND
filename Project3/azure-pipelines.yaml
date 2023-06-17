@@ -51,6 +51,8 @@ stages:
         backendAzureRmStorageAccountName: $(STORAGE_ACCOUNT_NAME)
         backendAzureRmContainerName: $(CONTAINER_NAME)
         backendAzureRmKey: 'test.terraform.tfstate'
+      env:
+        azureServiceConnectionId: $(azureServiceConnectionId)
 
 
 
