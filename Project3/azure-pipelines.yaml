@@ -45,7 +45,7 @@ stages:
       inputs:
         provider: 'azurerm'
         command: 'init'
-        workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/environments/test'
+        workingDirectory: '$(System.DefaultWorkingDirectory)/Project3/terraform/environments/test'
         backendServiceArm: 'Azure subscription 1 (a7f4943c-0527-4918-98af-14af18d4cebf)'
         backendAzureRmResourceGroupName: $(RESOURCE_GROUP_NAME)
         backendAzureRmStorageAccountName: $(STORAGE_ACCOUNT_NAME)
