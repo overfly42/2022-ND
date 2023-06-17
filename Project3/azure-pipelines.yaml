@@ -40,32 +40,17 @@ stages:
     
     # Run Terraform Init on the pipeline agent 
     # ToDo: Replace the resource group name, storage account name, and container name below
-#    - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV3@3
-#      displayName: 'Terrafom init'
-#      inputs:
-#        provider: 'azurerm'
-#        command: 'init'
-#        workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/environments/test'
-#        backendServiceArm: $(azureServiceConnectionId)
-#        backendAzureRmResourceGroupName: $(RESOURCE_GROUP_NAME)
-#        backendAzureRmStorageAccountName: $(STORAGE_ACCOUNT_NAME)
-#        backendAzureRmContainerName: $(CONTAINER_NAME)
-#        backendAzureRmKey: 'test.terraform.tfstate'
-
-    - task: TerraformCLI@0
+    - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV3@3
+      displayName: 'Terrafom init'
       inputs:
+        provider: 'azurerm'
         command: 'init'
-        backendType: 'azurerm'
-        backendServiceArm: 'Azure subscription 1 (a7f4943c-0527-4918-98af-14af18d4cebf)'
-        backendAzureRmSubscriptionId: 'a7f4943c-0527-4918-98af-14af18d4cebf'
-        ensureBackend: true
-        backendAzureRmResourceGroupName: '$(RESOURCE_GROUP_NAME)'
-        backendAzureRmResourceGroupLocation: 'West Europe'
-        backendAzureRmStorageAccountName: '$(STORAGE_ACCOUNT_NAME)'
-        backendAzureRmContainerName: '$(CONTAINER_NAME)'
+        workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/environments/test'
+        backendServiceArm: $(azureServiceConnectionId)
+        backendAzureRmResourceGroupName: $(RESOURCE_GROUP_NAME)
+        backendAzureRmStorageAccountName: $(STORAGE_ACCOUNT_NAME)
+        backendAzureRmContainerName: $(CONTAINER_NAME)
         backendAzureRmKey: 'test.terraform.tfstate'
-        allowTelemetryCollection: true
-
 
 
 
