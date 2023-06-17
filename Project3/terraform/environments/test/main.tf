@@ -1,16 +1,28 @@
-provider "azurerm" {
-  tenant_id       = "${var.tenant_id}"
-  subscription_id = "${var.subscription_id}"
-  client_id       = "${var.client_id}"
-  client_secret   = "${var.client_secret}"
-  features {}
-}
+#provider "azurerm" {
+#  tenant_id       = "${var.tenant_id}"
+#  subscription_id = "${var.subscription_id}"
+#  client_id       = "${var.client_id}"
+#  client_secret   = "${var.client_secret}"
+#  features {}
+#}
+#terraform {
+#  required_providers {
+#   azurerm = {
+#    source  = "hashicorp/azurerm"
+#   version = "=3.40.0"
+#}
+#}
+#}
+#provider "azurerm" {
+#    features {}
+#}
+
 terraform {
   backend "azurerm" {
-    storage_account_name = ""
-    container_name       = ""
-    key                  = ""
-    access_key           = ""
+    storage_account_name = "tfstate3178413012"
+    container_name       = "tfstate"
+    key                  = "test.terraform.tfstate"
+    access_key           = "hVrXPBUtdMcBZz3Omf4RZxSEW7C8LG5KoBcaJG9X5lywYLOt3TBxlvNPvKhZXCxc1cB56GxjYsFp+AStHMiOjw=="
   }
 }
 module "resource_group" {

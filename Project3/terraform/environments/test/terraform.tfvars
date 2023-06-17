@@ -5,9 +5,10 @@ client_secret = ""
 tenant_id = ""
 
 # Resource Group/Location
-location = ""
-resource_group_name = ""
-application_type = ""
+location = "West Europe"
+#resource_group_name = "Udacity_cs"
+resource_group = "Udacity_cs2"
+application_type = "myApplication"
 
 # Network
 virtual_network_name = ""
