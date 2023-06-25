@@ -34,8 +34,8 @@ stages:
     - task: ms-devlabs.custom-terraform-tasks.custom-terraform-installer-task.TerraformInstaller@0
       displayName: 'Terrafom installation'
       inputs:
-        terraformVersion: '1.5.0'
-#        terraformVersion: '1.2.9'
+#        terraformVersion: '1.5.0'
+        terraformVersion: '1.2.9'
         
     
     # Run Terraform Init on the pipeline agent 
