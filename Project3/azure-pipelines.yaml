@@ -89,10 +89,11 @@ stages:
         provider: 'azurerm'
         command: 'apply'
         workingDirectory: '$(System.DefaultWorkingDirectory)/Project3/terraform/environments/test'
-        environmentServiceNameAzureRM: '$(azureServiceConnectionId)'
+        #environmentServiceNameAzureRM: '$(azureServiceConnectionId)'
         backendServiceArm: 'Azure subscription 1 (a7f4943c-0527-4918-98af-14af18d4cebf)'
       env:
         azureServiceConnectionId: $(azureServiceConnectionId)
+        environmentServiceNameAzureRM: $(azureServiceConnectionId)
 
     # ToDo: Change the workingDirectory path, as applicable to you
     # Destroy the resources in Azure by running a separate pipeline. 
