@@ -13,9 +13,9 @@
 #}
 #}
 #}
-#provider "azurerm" {
-#    features {}
-#}
+provider "azurerm" {
+    features {}
+}
 
 terraform {
   backend "azurerm" {
