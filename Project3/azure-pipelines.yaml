@@ -87,7 +87,7 @@ stages:
       displayName: Terraform apply
       inputs:
         provider: 'azurerm'
-        command: 'plan'
+        command: 'apply'
         workingDirectory: '$(System.DefaultWorkingDirectory)/Project3/terraform/environments/test'
         #environmentServiceNameAzureRM: '$(azureServiceConnectionId)'
         environmentServiceNameAzureRM: 'Azure subscription 1 (a7f4943c-0527-4918-98af-14af18d4cebf)'
