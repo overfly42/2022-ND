@@ -114,9 +114,11 @@ stages:
     # Postman Data Validation Test Suite    
     # ToDo: Verify the working directory
     - task: CmdLine@2
-      inputs: pwd
+      inputs: 
+        script: pwd
     - task: CmdLine@2
-      inputs: ls '$(System.DefaultWorkingDirectory)/Project3/automatedtesting/postman'
+      inputs:
+        script: ls '$(System.DefaultWorkingDirectory)/Project3/automatedtesting/postman'
     - task: CmdLine@2
       displayName: Run Data Validation Tests
       continueOnError: true
