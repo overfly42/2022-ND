@@ -118,6 +118,15 @@ stages:
         script: pwd
     - task: CmdLine@2
       inputs:
+        script: ls '$(System.DefaultWorkingDirectory)/'
+    - task: CmdLine@2
+      inputs:
+        script: ls '$(System.DefaultWorkingDirectory)/Project3/'
+    - task: CmdLine@2
+      inputs:
+        script: ls '$(System.DefaultWorkingDirectory)/Project3/automatedtesting/'
+    - task: CmdLine@2
+      inputs:
         script: ls '$(System.DefaultWorkingDirectory)/Project3/automatedtesting/postman'
     - task: CmdLine@2
       displayName: Run Data Validation Tests
