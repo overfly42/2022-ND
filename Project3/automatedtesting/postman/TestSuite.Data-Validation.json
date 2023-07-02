@@ -71,7 +71,7 @@
 					"listen": "prerequest",
 					"script": {
 						"exec": [
-							"setTimeout(function(){}, 30000);"
+							"setTimeout(function(){}, 60000);"
 						],
 						"type": "text/javascript"
 					}
