@@ -200,9 +200,10 @@ stages:
           - task: AzureWebApp@1
             displayName: 'Deploy Azure Web App'
             inputs:
-              azureSubscription: ''     # ToDo
-              appName: ''               # ToDo
+              azureSubscription: 'Azure subscription 1 (a7f4943c-0527-4918-98af-14af18d4cebf)'     # ToDo
+              appName: 'myApplication'               # ToDo
               appType: webApp
+#              package: $(Pipeline.Workspace)/$(Build.BuildId)-fakerestapi.zip
               package: $(Pipeline.Workspace)/<artifact>/<archiveFile>       # ToDo: Use the published zip artifact. 
           #--------------------------------------------#    
           # Run JMeter test suite against the App Service
