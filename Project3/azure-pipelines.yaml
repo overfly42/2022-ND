@@ -135,7 +135,7 @@ stages:
         testResultsFiles: '**/TEST-*.xml'
         searchFolder:       # ToDo
         mergeTestResults: true
-        testRunTitle:       # ToDo
+        testRunTitle:       'Data Validation and Regression test'
 
     #--------------------------------------------#
     # Selenium (UI) Test Suite - Archive the package  
@@ -190,8 +190,8 @@ stages:
   # Deploy FakeRestAPI Web App
   # ToDo: Provide <environment name> you created in your DevOps project
   - deployment: FakeRestAPI
-    pool:
-      vmImage: 'Ubuntu-18.04'      
+    pool: myPool
+#      vmImage: 'Ubuntu-18.04'      
     environment: udacity-test   # ToDo
     strategy:
       runOnce:
