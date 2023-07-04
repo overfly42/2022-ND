@@ -11,7 +11,7 @@ resource "azurerm_network_interface" "test" {
   }
 }
 
-resource "azurerm_linux_virtual_machine" "" {
+resource "azurerm_linux_virtual_machine" "myVM" {
   name                = ""
   location            = ""
   resource_group_name = ""
