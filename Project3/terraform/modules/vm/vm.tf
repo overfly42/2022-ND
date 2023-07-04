@@ -14,7 +14,7 @@ resource "azurerm_network_interface" "test" {
 resource "azurerm_linux_virtual_machine" "myVM" {
   name                = "myVM"
   location            = "${var.location}"
-  resource_group_name = "${main.resource_group.resource_group_name}"
+  resource_group_name = "${var.resource_group}"
   size                = "Standard_DS2_v2"
   admin_username      = "adminuser"
   tags = {
