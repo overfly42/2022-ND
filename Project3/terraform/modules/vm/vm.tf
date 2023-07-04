@@ -32,9 +32,9 @@ resource "azurerm_linux_virtual_machine" "myVM" {
   source_image_reference {
     publisher = "cs"
 #    publisher = "Canonical"
-    offer     = "UbuntuServer"
+    offer     = "0001-com-ubuntu-server-focal"
 #    sku       = "18.04-LTS"
-    sku = "1.0.0"
+    sku = "20_04-lts-gen2"
     version   = "latest"
   }
 }
