@@ -17,6 +17,9 @@ resource "azurerm_linux_virtual_machine" "" {
   resource_group_name = ""
   size                = "Standard_DS2_v2"
   admin_username      = ""
+  tags = {
+    selenium = "True"
+  }
   network_interface_ids = []
   admin_ssh_key {
     username   = "adminuser"
