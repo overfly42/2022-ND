@@ -5,9 +5,9 @@ resource "azurerm_network_interface" "test" {
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = ""
+    subnet_id                     = "${module.network.subnet_id_test}"
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = ""
+    public_ip_address_id          = "${module.publicip.public_id_test}"
   }
 }
 
