@@ -5,9 +5,9 @@ resource "azurerm_network_interface" "test" {
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = "${module.network.subnet_id_test}"
+    subnet_id                     = "${var.subnet_id_test}"
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = "${module.publicip.public_id_test}"
+    public_ip_address_id          = "${var.publicip_id}"
   }
 }
 
@@ -32,7 +32,7 @@ resource "azurerm_linux_virtual_machine" "myVM" {
   source_image_reference {
     publisher = "cs"
 #    publisher = "Canonical"
-#    offer     = "UbuntuServer"
+    offer     = "UbuntuServer"
 #    sku       = "18.04-LTS"
     sku = "1.0.0"
     version   = "latest"
