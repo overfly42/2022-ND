@@ -1,7 +1,7 @@
 resource "azurerm_network_interface" "test" {
   name                = "internal network"
   location            = "${var.location}"
-  resource_group_name = "${module.resource_group.resource_group_name}"
+  resource_group_name = "${var.resource_group}"
 
   ip_configuration {
     name                          = "internal"
