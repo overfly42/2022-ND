@@ -5,7 +5,7 @@ resource "azurerm_network_interface" "test" {
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = "${var.subnet_id_test}"
+    subnet_id                     = "${var.subnet_id}"
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = "${var.publicip_id}"
   }
@@ -20,7 +20,7 @@ resource "azurerm_linux_virtual_machine" "myVM" {
   tags = {
     selenium = "True"
   }
-  network_interface_ids = []
+  network_interface_ids = ["test"]
   admin_ssh_key {
     username   = "adminuser"
     public_key = "file('~/.ssh/id_rsa_udacity2022p3')"
