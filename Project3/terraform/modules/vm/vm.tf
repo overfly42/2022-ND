@@ -23,7 +23,7 @@ resource "azurerm_linux_virtual_machine" "" {
   network_interface_ids = []
   admin_ssh_key {
     username   = "adminuser"
-    public_key = "file("~/.ssh/id_rsa_udacity2022p3")"
+    public_key = "file('~/.ssh/id_rsa_udacity2022p3')"
   }
   os_disk {
     caching           = "ReadWrite"

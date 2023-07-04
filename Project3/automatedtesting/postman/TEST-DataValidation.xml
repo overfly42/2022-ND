@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Starter APIs" tests="2" time="1.463">
+  <testsuite name="Create Employee" id="529e1b8d-6ba7-4b4c-ba8a-8e1f21256613" timestamp="2023-07-02T07:45:50.041Z" tests="1" failures="0" errors="0" time="0.698">
+    <testcase name="Successful response" time="0.698" classname="StarterApIs"/>
+  </testsuite>
+  <testsuite name="Get All Employees" id="d8853f82-fea6-4b85-9c16-e8b13ee0345d" timestamp="2023-07-02T07:45:50.041Z" tests="1" failures="0" errors="0" time="0.765">
+    <testcase name="Successful response" time="0.765" classname="StarterApIs"/>
+  </testsuite>
+</testsuites>
