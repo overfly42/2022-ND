@@ -12,11 +12,11 @@ resource "azurerm_network_interface" "test" {
 }
 
 resource "azurerm_linux_virtual_machine" "myVM" {
-  name                = ""
-  location            = ""
-  resource_group_name = ""
+  name                = "myVM"
+  location            = "${var.location}"
+  resource_group_name = "${module.resource_group.resource_group_name}"
   size                = "Standard_DS2_v2"
-  admin_username      = ""
+  admin_username      = "adminuser"
   tags = {
     selenium = "True"
   }
@@ -30,10 +30,11 @@ resource "azurerm_linux_virtual_machine" "myVM" {
     storage_account_type = "Standard_LRS"
   }
   source_image_reference {
-    pubpublisher = "cs"
+    publisher = "cs"
 #    publisher = "Canonical"
 #    offer     = "UbuntuServer"
 #    sku       = "18.04-LTS"
+    sku = "1.0.0"
     version   = "latest"
   }
 }
