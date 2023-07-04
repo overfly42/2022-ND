@@ -64,3 +64,9 @@ module "publicip" {
   resource_type    = "publicip"
   resource_group   = "${module.resource_group.resource_group_name}"
 }
+module "azurerm_linux_virtual_machine" {
+  source = "../../modules/vm"
+  location         = "${var.location}"
+  application_type = "${var.application_type}"
+  resource_group   = "${module.resource_group.resource_group_name}"
+}
