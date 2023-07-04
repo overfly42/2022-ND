@@ -68,7 +68,7 @@ module "azurerm_linux_virtual_machine" {
   source = "../../modules/vm"
   subnet_id        = "${module.network.subnet_id_test}"
   depends_on = [ module.publicip ]
-  publicip_id = "${module.publicip.name}"
+  publicip_id = "${module.publicip.test.name}"
   #publicip_id = "test"
   location         = "${var.location}"
   resource_group   = "${module.resource_group.resource_group_name}"
