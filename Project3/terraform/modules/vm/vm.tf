@@ -1,5 +1,5 @@
 resource "azurerm_network_interface" "test" {
-  name                = "internal network"
+  name                = "internal_network"
   location            = "${var.location}"
   resource_group_name = "${var.resource_group}"
 
