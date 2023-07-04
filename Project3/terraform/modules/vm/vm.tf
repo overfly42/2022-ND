@@ -23,7 +23,7 @@ resource "azurerm_linux_virtual_machine" "myVM" {
   network_interface_ids = ["${azurerm_network_interface.test}"]
   admin_ssh_key {
     username   = "adminuser"
-    public_key = "file('~/.ssh/id_rsa_udacity2022p3.pub')"
+    public_key = "file('/home/christian/.ssh/id_rsa_udacity2022p3.pub')"
   }
   os_disk {
     caching           = "ReadWrite"
