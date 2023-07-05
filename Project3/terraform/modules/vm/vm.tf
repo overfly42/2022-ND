@@ -35,6 +35,6 @@ resource "azurerm_linux_virtual_machine" "myVM" {
     offer     = "0001-com-ubuntu-server-focal"
 #    sku       = "18.04-LTS"
     sku = "20_04-lts-gen2"
-    version   = "latest"
+    #version   = "latest"
   }
 }
