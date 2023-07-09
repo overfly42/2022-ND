@@ -1,20 +1,27 @@
-#from login import login
-
-#def test():
-#    driver = login('standard_user', 'secret_sauce')
-    
-#    print('test')
-
-#if __name__ == '__main__':
-#    test()
-#Provided by ChatGPT
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from time import sleep
+from selenium.webdriver.chrome.options import Options as ChromeOptions
+
+
+print('Start Preperation')
+
+options = ChromeOptions()
+options.add_argument("--headless")
+options.add_argument("start-maximized")#; // open Browser in maximized mode
+options.add_argument("disable-infobars")#; // disabling infobars
+options.add_argument("--disable-extensions")#; // disabling extensions
+options.add_argument("--disable-gpu")#; // applicable to windows os only
+options.add_argument("--disable-dev-shm-usage")#; // overcome limited resource problems
+options.add_argument("--no-sandbox")#; // Bypass OS security model
+options.add_argument("--remote-debugging-port=9222")
+command_executor = "http://localhost:4444/wd/hub"
+driver = webdriver.Chrome(options=options)
+
 
 # Create a new instance of the Chrome driver
-driver = webdriver.Chrome()
+#driver = webdriver.Chrome()
 
 # Navigate to the website
 driver.get("https://www.saucedemo.com/")
