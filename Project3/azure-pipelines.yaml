@@ -242,11 +242,11 @@ stages:
                 #! /bin/bash
                 sudo apt-get upgrade -y
                 sudo apt-get install python3 -y
-                pip 
+                sudo apt install python3-pip -y
                 sudo apt-get install unzip -y
-                sudo apt-get install -y chromium-browser
-                apt-cache search chromium-browser
-                pip install selenium
+                sudo snap install chromium
+                python -m pip install selenium
+                snap find chromium
                 cd ~/
                 DIR=/home/azureuser/app
                 if [ ! -d "$DIR" ]; then
