@@ -243,10 +243,11 @@ stages:
                 sudo apt-get upgrade -y
                 sudo apt-get install python3 -y
                 sudo apt install python3-pip -y
-                sudo apt install python-pip -y
                 sudo apt-get install unzip -y
                 sudo snap install chromium
-                python -m pip install selenium
+                pip3 install selenium
+                pip3 list
+                echo "Pip3 has run"
                 snap find chromium
                 cd ~/
                 DIR=/home/azureuser/app
