@@ -3,9 +3,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from time import sleep
 from selenium.webdriver.chrome.options import Options as ChromeOptions
-
-
+from datetime import datetime
+print('####################################################')
 print('Start Preperation')
+print(datetime.now())
 
 options = ChromeOptions()
 options.add_argument("--headless")
@@ -64,3 +65,4 @@ assert len(remove_from_cart_buttons) == 0, "Not all items are removed to the car
 print('Test finshed')
 # Close the browser
 driver.quit()
+print('####################################################')
