@@ -42,10 +42,10 @@
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
           <stringProp name="HTTPSampler.domain">myapplication-appservice-app.azurewebsites.net</stringProp>
-          <stringProp name="HTTPSampler.port">433</stringProp>
-          <stringProp name="HTTPSampler.connect_timeout">1000</stringProp>
-          <stringProp name="HTTPSampler.response_timeout">1000</stringProp>
-          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.port">80</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout">10000</stringProp>
+          <stringProp name="HTTPSampler.response_timeout">10000</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
           <stringProp name="HTTPSampler.path">/api/Activities</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
