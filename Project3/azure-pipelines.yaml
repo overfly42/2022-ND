@@ -159,10 +159,10 @@ stages:
       displayName: 'Archive FakeRestAPI'
       inputs:
         #rootFolderOrFile:
-        #includeRootFolder: false
-        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/Project3/automatedtesting/jmeter/fakerestapi'
+        includeRootFolder: false
+        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/Project3/automatedtesting/jmeter/fakerestapi/'
         #rootFolderOrFile: '$(System.DefaultWorkingDirectory)/Project3/'
-        includeRootFolder: true
+        #includeRootFolder: true
         archiveType: 'zip'
         archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip'
     - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip
