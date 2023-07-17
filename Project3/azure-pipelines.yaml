@@ -160,7 +160,7 @@ stages:
       inputs:
         #rootFolderOrFile:
         includeRootFolder: false
-        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/Project3/automatedtesting/jmeter/fakerestapi/'
+        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/Project3/automatedtesting/jmeter/fakerestapi'
         #rootFolderOrFile: '$(System.DefaultWorkingDirectory)/Project3/'
         #includeRootFolder: true
         archiveType: 'zip'
@@ -273,9 +273,12 @@ stages:
                     sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
                 fi
                 export PATH=$PATH:/home/azureuser/app
-                pwd
-                ls
                 echo "Starting Selenium Tests"
                 python3 add_remove_from_cart.py >> selenium.log
+                echo "Last 10 lines of selenium log"
+                echo "##############################"
+                tail -n 10 selenium.log
+                echo "##############################"
                 echo "Completed Selenium Tests. Check selenium.log for results."
+                
               workingDirectory: $(Pipeline.Workspace)/drop-uitests/  
